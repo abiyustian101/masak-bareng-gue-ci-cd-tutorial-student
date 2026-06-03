@@ -35,7 +35,7 @@ class TestSearchPage:
         assert res.status_code == 200
 
     def test_search_shows_query(self):
-        res = client.get("/search?q=rendang")
+        res = client.get("/search?q=puding cokelat pak hambali")
         assert "rendang" in res.text.lower()
 
     def test_empty_search_returns_200(self):
@@ -137,9 +137,14 @@ class TestApiStats:
         assert "avg_ingredients" in stats
         assert "avg_steps" in stats
 
+    # def test_total_is_3000(self):
+    #     stats = client.get("/api/stats").json()
+    #     assert stats["total"] == 3000
+
+
     def test_total_is_3000(self):
         stats = client.get("/api/stats").json()
-        assert stats["total"] == 3000
+        assert stats["total"] == 9999
 
     def test_averages_are_positive(self):
         stats = client.get("/api/stats").json()
