@@ -3,7 +3,7 @@ Test suite untuk Masak Bareng Gue API.
 
 Jalankan: pytest tests/ -v
 """
-import pytest
+# import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
